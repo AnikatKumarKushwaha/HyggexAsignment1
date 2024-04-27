@@ -1,0 +1,57 @@
+.card {
+  position: relative;
+  width: 200px;
+  height: 300px;
+  perspective: 1000px; /* Add perspective for 3D effect */
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s; /* Add transition for smooth flip */
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg); /* Flip when card is flipped */
+}
+
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  border-radius: 20%;
+  position: absolute;
+  backface-visibility: hidden; /* Hide backface of the card */
+}
+
+.card-front {
+  background-color: #fff;
+}
+
+.card-back {
+  background-color: #000;
+  color: #f1f1f1;
+  transform: rotateY(180deg); /* Initially hide the back side of the card */
+}
+
+.rotate-button {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.rotate-button:hover {
+  background-color: #45a049;
+}
+
+.rotate-button:focus {
+  outline: none;
+}

@@ -1,0 +1,30 @@
+import React from "react";
+import FaqItem from "./FaqItem";
+
+export default function FaqSection() {
+  const faqQuestionAns = [
+    {
+      question: "Can education flashcards be used for all age groups?",
+      answer:
+        "Yes, education flashcards can be tailored to different age groups and learning levels. There are flashcards designed for preschoolers, elementary school students, high school students, and even for college-level and adult learners.",
+    },
+    {
+      question: "How do education flashcards work?",
+      answer:
+        "Education flashcards work by presenting a question or prompt on one side and the corresponding answer or information on the other. Users can review the cards repeatedly, reinforcing their memory and enhancing learning through repetition.",
+    },
+    {
+      question: "Can education flashcards be used for test preparation?",
+      answer:
+        "Absolutely. Flashcards are an excellent tool for test preparation, allowing students to review key concepts, terms, and facts. They provide a quick and focused way to reinforce knowledge before exams.",
+    },
+  ];
+
+  return (
+    <div className="-mt-5 pb-10 flex flex-col gap-4 w-full sm:w-[70%]">
+      {faqQuestionAns.map((item, index) => (
+        <FaqItem key={index} question={item.question} answer={item.answer} />
+      ))}
+    </div>
+  );
+}
